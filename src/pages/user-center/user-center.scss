@@ -1,0 +1,54 @@
+page-user-center {
+    .user-info-card {
+        background: url('../assets/imgs/user-card-background/user-card-background-750x180.png') no-repeat left top;
+        background-size: 100% 100%;
+        padding: map-get($map: $padding, $key: medium) map-get($map: $padding, $key: medium-wide);
+        color: map-get($map: $moore8_common_colors, $key: font_white);
+        line-height: 150%;
+        .user-center-main-avatar {
+            .user-avatar-container {
+                img {
+                    border-radius: 50%;
+                }
+            }
+        }
+        .edit-information-btn {
+            width: 100%;
+            height: 2.6rem;
+            border-radius: 2.6rem;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+        }
+    }
+    .right-arrow-link-icon {
+        content: url("../assets/icon/arrow.png");
+        transform: rotate(-90deg);
+    }
+    .studied-couses-icon {
+        content: url("../assets/icon/user-center/studied-icon-60.png");
+    }
+    .uploaded-couses-icon {
+        content: url("../assets/icon/user-center/uploaded-icon-60.png");
+    }
+    .link-address-icon {
+        position: absolute;
+        right: map-get($map: $padding, $key: medium-wide);
+        font-size: map-get($map: $padding, $key: medium-wide) * 1.6;
+    }
+    .user-link-bolck {
+        margin-top: map-get($map: $padding, $key: medium);
+        padding: map-get($map: $padding, $key: medium) map-get($map: $padding, $key: medium-wide);
+        width: 100%;
+        background-color: map-get($map: $moore8_common_colors, $key: font_white);
+        // box-shadow: 0 1px 1px map-get($map: $moore8_common_colors, $key: shadow_default);
+        height: map-get($map: $padding, $key: medium-wide) * 4;
+        img {
+            height: 100%;
+        }
+        span, p {
+            margin: 0 map-get($map: $padding, $key: medium-wide);
+            color: map-get($map: $moore8_common_colors, $key: font_dark_grey);
+            line-height: 200%;
+        }
+    }
+}
