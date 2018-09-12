@@ -47,12 +47,12 @@ export const SideMenuRouteList: Array<any> = [
         routeNameZh: zhLang.menu.homepage,
         routeNameEn: enLang.menu.homepage,
         className: 'homepage-icon',
-        iconPath: ''
+        routePath: 'HomePage',
     },
     {
         routeNameZh: zhLang.menu.marketingpage,
         routeNameEn: enLang.menu.marketingpage,
-        className: 'marketing-page-icon',
-        iconPath: ''
+        className: 'marketing-icon',
+        routePath: 'UserCenterPage'
     }
 ]

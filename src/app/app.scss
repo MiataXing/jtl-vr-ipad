@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,21 +12,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-
 body {
     font-size: map-get($map: $fontSize, $key: default);
     background-color: map-get($map: $moore8_common_colors, $key: body_background);
 }
 
-ion-header, ion-content {
+ion-header,
+ion-content {
     background-color: map-get($map: $moore8_common_colors, $key: body_background);
 }
 
-.content-md, .content-ios {
+.content-md,
+.content-ios {
     background-color: map-get($map: $moore8_common_colors, $key: body_background);
 }
 
-.no-padding-tag, [no-padding-block] {
+.no-padding-tag,
+[no-padding-block] {
     padding: 0;
 }
 
@@ -42,4 +42,12 @@ ion-header, ion-content {
 
 .large-size-font {
     font-size: map-get($map: $fontSize, $key: large);
+}
+
+.homepage-icon {
+    content: url('../assets/icon/menu-icon-homepage.png');
+}
+
+.marketing-icon {
+    content: url('../assets/icon/menu-icon-marketing.png');
 }

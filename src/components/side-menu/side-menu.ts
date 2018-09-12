@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { SideMenuRouteList } from '../../util/constant-util';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+// import { NavController } from 'ionic-angular';import {} from 'ionic-angular';
 
 /**
  * Generated class for the SideMenuComponent component.
@@ -13,12 +13,20 @@ import { SideMenuRouteList } from '../../util/constant-util';
 })
 export class SideMenuComponent {
 
+  @Input() sideMenuList: Array<any>;
+  @Output() event = new EventEmitter();
+
   text: string;
-  sideMenuList: Array<any> = {...SideMenuRouteList};
 
   constructor() {
     console.log('Hello SideMenuComponent Component');
     this.text = 'Hello World';
+  }
+
+  singleMenuClickEve($ev, menuObj) {
+    $ev.target.value = {...menuObj};
+    // this.navController.push(menuObj.routePath);
+    this.event.emit($ev.target);
   }
 
 }

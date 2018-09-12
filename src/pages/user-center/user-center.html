@@ -1,36 +1,6 @@
 <ion-header>
-  <common-header></common-header>
 </ion-header>
 
 <ion-content>
-  <content-header [avatarUrl]="userData.AvatarUrl" (event)="linktoUserCenter($event)"></content-header>
-  <ion-row class="user-info-card">
-    <ion-col col-2 class="user-center-main-avatar">
-      <div class="user-avatar-container">
-        <img [src]="userAvatarUrl" alt="">
-      </div>
-    </ion-col>
-    <ion-col col-7 class="user-center-main-info">
-      <ion-row class="large-size-font">{{userData.DisplayName}}</ion-row>
-      <ion-row class="medium-default-size-font">{{userData.JobName}}</ion-row>
-      <ion-row>
-        <ion-col col-6 class="no-padding-tag medium-default-size-font">{{zhLang.usercenter.studied_courses_short}} {{userData.StudiedCourses}}</ion-col>
-        <ion-col col-6 class="no-padding-tag medium-default-size-font">{{zhLang.usercenter.followed_people_short}} {{userData.Following}}</ion-col>
-      </ion-row>
-    </ion-col>
-    <ion-col col-3 class="user-center-edit-info">
-      <ion-buttons>
-        <button class="edit-information-btn" ion-button>
-          {{zhLang.usercenter.information}}
-        </button>
-      </ion-buttons>
-    </ion-col>
-  </ion-row>
-  <ion-row class="user-links-container" no-padding-block>
-    <ion-row no-padding-block class="user-link-bolck" *ngFor="let route of userCenterRoutes">
-      <img [class]="route.className" alt="">
-      <p>{{route.routeName}}</p>
-      <p class="link-address-icon">></p>
-    </ion-row>
-  </ion-row>
+    <img src="assets/imgs/background-marketing.png" alt="" (click)="hideSideMenu($event)">
 </ion-content>

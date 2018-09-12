@@ -1,14 +1,11 @@
-<!-- Generated template for the SideMenuComponent component -->
 <div class="side-menu-container">
-  <div class="single-menu-block" *ngFor="let menu of sideMenuList">
-    <div class="single-menu-image-container">
-        <img [src]="menu.iconPath" alt="">
+    <div class="single-menu-block" *ngFor="let menu of sideMenuList" (click)="singleMenuClickEve($event, menu)">
+        <img [class]="menu.className" alt="">
+        <div>
+            <span>{{menu.routeNameZh}}</span>
+        </div>
+        <div>
+            <span>{{menu.routeNameEn}}</span>
+        </div>
     </div>
-    <ion-row>
-      <span>{{menu.routeNameZh}}</span>
-    </ion-row>
-    <ion-row>
-      <span>{{menu.routeNameEn}}</span>
-    </ion-row>
-  </div>
 </div>

@@ -3,7 +3,9 @@ import { NavController } from 'ionic-angular';
 import { HttpService } from '../../provider/http-provider/http-provider';
 import { UserService } from '../../provider/routers/user';
 import { HomepageService } from '../../provider/routers/homepage';
+import { SideMenuRouteList } from '../../util/constant-util';
 import { Userdata } from '../../viewmodels/UserData';
+import { GlobalProvider } from '../../providers/global/global';
 
 @Component({
   selector: 'page-home',
@@ -11,6 +13,7 @@ import { Userdata } from '../../viewmodels/UserData';
 })
 export class HomePage {
 
+  // here are some useless variables
   defaultUserAvatarUrl: string = 'assets/icon/anonymous.jpg';
   loginUrl: string = "";
   userAvatarUrl: string = '';
@@ -20,6 +23,9 @@ export class HomePage {
   hotCategoryCourses: Array<any> = [];
   liveCourses: Array<any> = [];
   slidePics: Array<object> = [];
+
+  // start from here
+  sideMenuList: Array<any> = [...SideMenuRouteList];
 
   constructor(
     public navCtrl: NavController,
@@ -84,7 +90,16 @@ export class HomePage {
     window.location.href = url;
   }
 
+  singleMenuClickEv(params) {
+    
+  }
+
   ionViewWillEnter() {
+    // console.log(GlobalProvider.getInstance());
+    let a = GlobalProvider.getInstance();
+    console.log(a.text);
+    GlobalProvider.setInstancePropertyVal('text', '123');
+    console.log(a.text);
     // this.getUserData();
     // this.getHomepageData();
   }

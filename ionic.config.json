@@ -1,6 +1,6 @@
 {
   "name": "moore8_mobile",
-  "app_id": "",
+  "integrations": {},
   "type": "ionic-angular",
-  "integrations": {}
+  "app_id": ""
 }

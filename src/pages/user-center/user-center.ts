@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, List } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { Userdata } from '../../viewmodels/UserData';
 import { Lang } from '../../lang/lang';
 import { UserCenterRouteList } from '../../util/constant-util';
+import { GlobalProvider } from '../../providers/global/global';
+import { SideMenuRouteList } from '../../util/constant-util';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -15,8 +18,10 @@ export class UserCenterPage {
   zhLang: object = {...Lang.zh};
   editInfoBtnText: string;
   userCenterRoutes: Array<any>;
+  sideMenuList: Array<any> = [...SideMenuRouteList];
 
   constructor(public navCtrl: NavController,
+    public appCtrl: App,
     public navParams: NavParams) {
       // this.initDefaultData();
   }
@@ -37,8 +42,17 @@ export class UserCenterPage {
     this.initDefaultData();
   }
 
+  hideSideMenu() {
+    let naveCtrl:NavController = this.appCtrl.getActiveNav();
+    // debugger;
+    console.log(naveCtrl);
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserCenterPage');
+    let ins = GlobalProvider.getInstance();
+    GlobalProvider.setInstancePropertyVal('visibleFlag', false);
+    console.log(ins.visibleFlag);
   }
 
 }

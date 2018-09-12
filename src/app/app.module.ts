@@ -16,6 +16,7 @@ import { ComponentsModule } from '../components/components.module';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { GlobalProvider } from '../providers/global/global';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { HomePage } from '../pages/home/home';
     HttpService,
     UserService,
     CourseService,
-    HomepageService
+    HomepageService,
+    GlobalProvider
   ]
 })
 export class AppModule {}
