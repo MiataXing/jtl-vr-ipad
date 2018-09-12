@@ -5,7 +5,7 @@ import { Lang } from '../../lang/lang';
 import { UserCenterRouteList } from '../../util/constant-util';
 import { GlobalProvider } from '../../providers/global/global';
 import { SideMenuRouteList } from '../../util/constant-util';
-import { HomePage } from '../home/home';
+import { MyApp } from '../../app/app.component';
 
 @IonicPage()
 @Component({
@@ -22,6 +22,7 @@ export class UserCenterPage {
 
   constructor(public navCtrl: NavController,
     public appCtrl: App,
+    public myApp: MyApp,
     public navParams: NavParams) {
       // this.initDefaultData();
   }
@@ -44,8 +45,10 @@ export class UserCenterPage {
 
   hideSideMenu() {
     let naveCtrl:NavController = this.appCtrl.getActiveNav();
+    let appCtrl = this.appCtrl;
     // debugger;
-    console.log(naveCtrl);
+    console.log(naveCtrl, appCtrl, this.myApp);
+    this.myApp.visibleFlag = false;
   }
 
   ionViewDidLoad() {
